@@ -1,0 +1,52 @@
+<head> 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+<h3>Add New Memory</h3>
+<div class = "form">
+  <form class="myForm" method="get" enctype="application/x-www-form-urlencoded" action="/html/codes/html_form_handler.cfm">
+
+    <p>
+      <label><h4>Topic</h4>
+    <input type="text" name="topic"   >
+    </label>
+    </p>
+
+<hr>
+    <fieldset>
+      <h4>Which type of memory is this?</h4>
+      
+      <p><label class="choice"> <input type="checkbox"  required value="branch"> Branch </label></p>
+      <p><label class="choice"> <input type="checkbox"  required value="event"> Event </label></p>
+    </fieldset>
+<hr>
+
+
+
+    <p>
+      <label><h4>often would you like to talk about this?</h4> 
+    <select id="reminderfrequency" name="reminderfrequency">
+    <option value="daily" selected="selected">Daily</option>
+    <option value="2days" >Every 2 Days</option>
+    <option value="3days" >Every 3 Days</option>
+    <option value="4days" >Every 4 Days</option>
+    <option value="5days" >Every 5 Days</option>
+    <option value="6days" >Every 6 Days</option>
+    <option value="7days" >Every 7 Days</option>
+    <option value="2weeks" >Every 2 weeks</option>
+    <option value="3weeks" >Every 3 weeks</option>
+    <option value="month" >Once a Month</option>
+    
+    </select>
+    </label>
+    </p>
+<hr>
+    <p>
+      <label><h4>Description</h4>
+    <textarea name="comments" maxlength="700"></textarea>
+    </label>
+    </p>
+<hr>
+    <p><button>Save Memory</button></p>
+
+  </form>
+</div>
