@@ -1,12 +1,34 @@
 /* users.js
  * Exports a router connecting the application to all user routes.
  */
-const express = require('express');
-const router  = express.Router();
+const express  = require('express');
+const jwt      = require('jsonwebtoken');
+const passport = require('passport');
+const router   = express.Router();
 
-//Register
-router.get('/register', (req, res, next) => {
-  res.send('REGISTER');
+const User    = require('../models/user');
+
+/* register
+ * Creates a user object with information from a POST request
+ * and attempts to add the user to the database.
+ */
+router.post('/register', (req, res, next) => {
+  console.log(req.body);
+  let newUser = new User({
+    name: req.body.name,
+    email: req.body.email,
+    username: req.body.username,
+    password: req.body.password
+  });
+
+  User.addUser(newUser, (err) => {
+    if(err){
+      res.json({success: false, msg: 'Failed to register user'});
+    }
+    else{
+      res.json({success: true, msg:'User registered'});
+    }
+  });
 });
 
 router.post('/authenticate', (req, res, next) => {
@@ -16,11 +38,6 @@ router.post('/authenticate', (req, res, next) => {
 //Profile
 router.get('/profile', (req, res, next) => {
   res.send('PROFILE');
-});
-
-//Validate
-router.get('/validate', (req, res, next) => {
-  res.send('VALIDATE');
 });
 
 module.exports = router;
