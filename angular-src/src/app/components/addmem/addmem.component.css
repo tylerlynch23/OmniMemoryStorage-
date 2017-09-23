@@ -1,8 +1,10 @@
 h3{
     
     text-align: center;
-    font-family: 'Open Sans', sans-serif;
-    padding-bottom: 26px;
+    -webkit-text-stroke: 1px rgba(97, 137, 248, 0.6);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-top: 20px;
+    padding-bottom: 20px;
 
     
 }
@@ -44,8 +46,11 @@ h3{
     padding-bottom: 0;
   
     }
+
     
-    .myForm input[type="text"],
+    .myForm input[type="text"]:focus{
+        background-color: lightblue;
+    }
     .myForm input[type="tel"],
     .myForm input[type="email"],
     .myForm input[type="datetime-local"],
@@ -64,6 +69,10 @@ h3{
     width: 300px;
     opacity: 0.9;
     }
+        .myForm textarea:focus{
+            background-color: lightblue;            
+
+        }
     
     .myForm button {
     padding: 1em;

@@ -1,29 +1,37 @@
 <head> 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
-<h3>Add New Memory</h3>
+<h3>New Memory</h3>
 <div class = "form">
   <form class="myForm" method="get" enctype="application/x-www-form-urlencoded" action="/html/codes/html_form_handler.cfm">
 
     <p>
-      <label><h4>Topic</h4>
+      <label><h5>Topic</h5>
     <input type="text" name="topic"   >
     </label>
     </p>
 
 <hr>
     <fieldset>
-      <h4>Which type of memory is this?</h4>
+      <h5>Which type of memory is this?</h5>
       
-      <p><label class="choice"> <input type="checkbox"  required value="branch"> Branch </label></p>
-      <p><label class="choice"> <input type="checkbox"  required value="event"> Event </label></p>
+      <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> Event
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> Branch
+          </label>
+        </div>
     </fieldset>
 <hr>
 
 
 
     <p>
-      <label><h4>often would you like to talk about this?</h4> 
+      <label><h5>How often do you want to talk about this?</h5> 
     <select id="reminderfrequency" name="reminderfrequency">
     <option value="daily" selected="selected">Daily</option>
     <option value="2days" >Every 2 Days</option>
@@ -37,11 +45,12 @@
     <option value="month" >Once a Month</option>
     
     </select>
+
     </label>
     </p>
 <hr>
     <p>
-      <label><h4>Description</h4>
+      <label><h5>Description</h5>
     <textarea name="comments" maxlength="700"></textarea>
     </label>
     </p>
