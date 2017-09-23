@@ -15,6 +15,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { GraphVisJsComponent } from './components/graph-vis-js/graph-vis-js.component';
 
 //This tells the Front-End which pages it can go to.
 const appRoutes = [
@@ -32,7 +33,8 @@ const appRoutes = [
     LoginComponent,
     RegisterComponent,
     HomepageComponent,
-    DashboardComponent
+    DashboardComponent,
+    GraphVisJsComponent
   ],
   imports: [
     BrowserModule,
