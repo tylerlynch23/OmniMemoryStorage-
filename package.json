@@ -8,12 +8,22 @@
     "start": "nodejs app"
   },
   "dependencies": {
+<<<<<<< HEAD
     "express": "*",
     "mongoose": "*",
     "bcryptjs": "*",
     "cors": "*",
     "jsonwebtoken": "*",
     "body-parser": "*",
+=======
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "bootstrap": "^3.3.7",
+    "cors": "*",
+    "express": "*",
+    "jsonwebtoken": "*",
+    "mongoose": "*",
+>>>>>>> origin/front-end-barebones
     "passport": "*",
     "passport-jwt": "*"
   },
