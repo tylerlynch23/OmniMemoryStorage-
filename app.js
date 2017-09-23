@@ -40,6 +40,7 @@ function initApp(){
  * Verifies connection or prints out the error on database connection failure.
  */
 function connectDatabase(){
+  mongoose.Promise = require('bluebird');
   mongoose.connect(config.database, {
     useMongoClient: true
   });
@@ -65,10 +66,15 @@ function setupStaticFolder(){
  *   - CORS: Cross Origin Resource Sharing - allows requests to be made to our
  *           app to a different domain name.
  *   - Body-parser - Parses the body of incoming requests such as forms
+ *   - Passport - Authentication middleware for restricting or allowing routes
+ *                based on authentication.
  */
 function initMiddleware(){
   app.use(cors());
   app.use(bodyParser.json());
+  app.use(passport.initialize());
+  app.use(passport.session());
+  require('./config/passport')(passport);
 }
 
 /* setupRoutes
