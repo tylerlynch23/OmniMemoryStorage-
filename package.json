@@ -7,10 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app"
   },
-  "dependencies":{
+  "dependencies": {
     "bcryptjs": "*",
     "bluebird": "*",
     "body-parser": "*",
+    "bootstrap": "^3.3.7",
     "cors": "*",
     "express": "*",
     "jsonwebtoken": "*",

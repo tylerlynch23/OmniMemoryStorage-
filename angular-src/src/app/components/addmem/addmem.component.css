@@ -1,0 +1,102 @@
+h3{
+    
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    padding-bottom: 26px;
+
+    
+}
+
+
+.myForm {
+    
+    font-family: 'Open Sans', sans-serif;
+    display: inline-block;
+    font-size: 0.8em;
+    width: 40em;
+    padding: 1em;
+    border: 1px solid #ccc;
+    text-align: center;
+    background-color: rgb(212, 234, 255);
+    
+
+    }
+    
+    .myForm * {
+    box-sizing: border-box;
+    
+    }
+    
+    .myForm fieldset {
+    border: none;
+    padding: 0;
+    }
+    
+    .myForm label {
+    padding-bottom: 0px;
+    font-weight: bold;
+    }
+    
+    .myForm label.choice {
+    font-size: 12;
+    font-weight: normal;
+    padding: 0;
+    padding-bottom: 0;
+  
+    }
+    
+    .myForm input[type="text"],
+    .myForm input[type="tel"],
+    .myForm input[type="email"],
+    .myForm input[type="datetime-local"],
+    .myForm select,
+    .myForm textarea {
+    display: block;
+    width: 100%;
+    border: 1px solid #ccc;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9em;
+    padding: 0.3em;
+    }
+    
+    .myForm textarea {
+    height: 100px;
+    width: 300px;
+    opacity: 0.9;
+    }
+    
+    .myForm button {
+    padding: 1em;
+    border-radius: 0.5em;
+    background: #eee;
+    border: none;
+    font-weight: bold;
+    margin-top: 1em;
+    }
+    
+    .myForm button:hover {
+    background: #ccc;
+    cursor: pointer;
+    }
+    div.form
+    {
+        display: block;
+        text-align: center;
+    }
+    form
+    {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+    }
+
+
+
+.checkbox {
+width:250px;
+float:left;
+}
+    
+
+   
