@@ -16,27 +16,34 @@ const app   = express();
 const port  = 3000;
 
 setupApp();
-setupDatabase();
 
-/* setupApp
+function setupApp(){
+  initMiddleware();
+  initApp();
+  connectDatabase();
+}
+
+/* initApp
  * Starts the server and listens for connections on the port defined above, and
  * then calls other functions to setup different components of the application.
  */
-function setupApp(){
+function initApp(){
   app.listen(port, () => {
     console.log('\nServer started on port ' + port + '...');
   });
   setupStaticFolder();
   setupRoutes();
-  setupMiddleware();
 }
 
-/* setupDatabase
+/* connectDatabase
  * Sets up the database based on settings defined in config/database.config.
  * Verifies connection or prints out the error on database connection failure.
  */
-function setupDatabase(){
-  mongoose.connect(config.database);
+function connectDatabase(){
+  mongoose.Promise = require('bluebird');
+  mongoose.connect(config.database, {
+    useMongoClient: true
+  });
 
   mongoose.connection.on('connected', () => {
     console.log('Connected to database ' + config.database + '...');
@@ -54,15 +61,20 @@ function setupStaticFolder(){
   app.use(express.static(path.join(__dirname, 'static')));
 }
 
-/* setupMiddleware
+/* initMiddleware
  * Sets up the middleware for:
  *   - CORS: Cross Origin Resource Sharing - allows requests to be made to our
  *           app to a different domain name.
  *   - Body-parser - Parses the body of incoming requests such as forms
+ *   - Passport - Authentication middleware for restricting or allowing routes
+ *                based on authentication.
  */
-function setupMiddleware(){
+function initMiddleware(){
   app.use(cors());
   app.use(bodyParser.json());
+  app.use(passport.initialize());
+  app.use(passport.session());
+  require('./config/passport')(passport);
 }
 
 /* setupRoutes

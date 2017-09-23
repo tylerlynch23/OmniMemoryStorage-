@@ -5,25 +5,17 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodejs app"
+    "start": "node app"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "express": "*",
-    "mongoose": "*",
     "bcryptjs": "*",
-    "cors": "*",
-    "jsonwebtoken": "*",
-    "body-parser": "*",
-=======
-    "bcryptjs": "*",
+    "bluebird": "*",
     "body-parser": "*",
     "bootstrap": "^3.3.7",
     "cors": "*",
     "express": "*",
     "jsonwebtoken": "*",
     "mongoose": "*",
->>>>>>> origin/front-end-barebones
     "passport": "*",
     "passport-jwt": "*"
   },
