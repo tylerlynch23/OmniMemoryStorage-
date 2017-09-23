@@ -11,13 +11,16 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AddmemComponent } from './components/addmem/addmem.component';
 
 //This tells the Front-End which pages it can go to.
 const appRoutes = [
   {path:'', component:HomepageComponent},
   {path:'register', component:RegisterComponent},
   {path:'login', component:LoginComponent},
-  {path:'dashboard', component:DashboardComponent}
+  {path:'dashboard', component:DashboardComponent},
+  {path:'newmemory', component:AddmemComponent}
+  
 ]
 
 @NgModule({
@@ -28,7 +31,8 @@ const appRoutes = [
     LoginComponent,
     RegisterComponent,
     HomepageComponent,
-    DashboardComponent
+    DashboardComponent,
+    AddmemComponent
   ],
   imports: [
     BrowserModule,
