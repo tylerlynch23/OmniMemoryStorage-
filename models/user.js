@@ -1,3 +1,6 @@
+/* user.js
+ * Our User schema, model, and functions used with the User model.
+ */
 const mongoose = require('mongoose');
 const bcrypt   = require('bcryptjs');
 const config   = require('../config/database');
@@ -49,8 +52,22 @@ module.exports.addUser = function(newUser, callback){
   bcrypt.genSalt(10, (err, salt) => {
     bcrypt.hash(newUser.password, salt, (err, hash) => {
       if (err) throw err;
+      console.log(newUser.password);
       newUser.password = hash;
       newUser.save(callback);
     });
+  });
+}
+
+/* comparePassword
+ * Takes a candidate password in plaintext and the hash of the password, then
+ * hashes the plaintext password and compares the two.
+ */
+module.exports.comparePassword = function(candidatePassword, hash, callback){
+  console.log("Compare: " + candidatePassword);
+  bcrypt.compare(candidatePassword, hash, (err, isMatch) => {
+    console.log(isMatch);
+    if(err) throw err;
+    callback(null, isMatch);
   });
 }
