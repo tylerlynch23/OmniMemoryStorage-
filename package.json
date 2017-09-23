@@ -1,0 +1,30 @@
+{
+  "name": "omnimemorystorage",
+  "version": "1.0.0",
+  "description": "A memory-aid web application.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "dependencies":{
+    "express":"*",
+    "mongoose":"*",
+    "bcryptjs":"*",
+    "cors":"*",
+    "jsonwebtoken":"*",
+    "body-parser":"*",
+    "passport":"*",
+    "passport-jwt":"*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tylerlynch23/OmniMemoryStorage-.git"
+  },
+  "author": "Ryan O'Mara, Tyler Lynch, Brian De Guzman, Arya Hajikandi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tylerlynch23/OmniMemoryStorage-/issues"
+  },
+  "homepage": "https://github.com/tylerlynch23/OmniMemoryStorage-#readme"
+}
